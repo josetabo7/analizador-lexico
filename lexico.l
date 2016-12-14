@@ -74,8 +74,16 @@ operandos_compuestos	"<="|">="|"=="|"!="|"&&"|"||"
 	/*** Sección de código en C ***/
 void main()
 {
-    yyin=fopen("ArchivoEntrada.txt","r");//lectura
-    archSal=fopen("ArchivoSalida.txt","w");//escribe
+	//char cadena[200];
+	//printf("ingrese el nombre del archivo: "+cadena);
+	//yyin=char *fgets(char *cadena, int n, FILE *fichero);
+	//yyin= fopen(cadena,"r");
+	printf("Ingrese el nombre del archivo]:\n");
+	char file[250];
+	scanf("%[^\n]",file);
+	//printf("cadena: %s",file);
+   yyin=fopen(file,"r");//lectura
+   archSal=fopen("Resultados.txt","w");//escribe
     yylex();
     fclose(archSal);
 }
